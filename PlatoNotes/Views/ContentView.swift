@@ -27,6 +27,13 @@ struct ContentView: View {
             .navigationTitle("Plato")
             .navigationBarTitleDisplayMode(.large)
             .toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    Link(destination: URL(string: "https://github.com/wonmor/Plato-Notes-iOS")!) {
+                        Image(systemName: "chevron.left.forwardslash.chevron.right")
+                            .font(.body)
+                            .foregroundStyle(PlatoTheme.gold)
+                    }
+                }
                 ToolbarItem(placement: .topBarTrailing) {
                     Button {
                         showingComposer = true
