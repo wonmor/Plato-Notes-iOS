@@ -46,7 +46,7 @@ https://wonmor.github.io/Plato-Notes-iOS/
 https://wonmor.github.io/Plato-Notes-iOS/support.html
 
 ## Marketing URL
-https://github.com/wonmor/Plato-Notes-iOS
+https://wonmor.github.io/Plato-Notes-iOS/marketing.html
 
 ## App Privacy
 Data Not Collected

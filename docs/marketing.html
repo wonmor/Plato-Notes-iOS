@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plato — Disappearing Notes</title>
+    <meta name="description" content="Notes that vanish. Like Snapchat, but for your thoughts. Free and open source.">
+    <meta property="og:title" content="Plato — Disappearing Notes">
+    <meta property="og:description" content="Notes that vanish. Like Snapchat, but for your thoughts. Free and open source.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://wonmor.github.io/Plato-Notes-iOS/marketing.html">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lora:ital@0;1&display=swap');
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Lora', Georgia, serif;
+            background-color: #1e1c18;
+            color: #e0dbd2;
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 100px 24px 60px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-border {
+            color: #ccae5c66;
+            font-size: 14px;
+            letter-spacing: 8px;
+            margin-bottom: 40px;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 56px;
+            color: #ccae5c;
+            margin-bottom: 16px;
+            letter-spacing: 2px;
+        }
+
+        .hero .tagline {
+            font-size: 24px;
+            color: #c4bbaa;
+            margin-bottom: 12px;
+        }
+
+        .hero .sub-tagline {
+            font-size: 17px;
+            color: #8a7e6b;
+            font-style: italic;
+            margin-bottom: 48px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 24px;
+        }
+
+        .cta-primary {
+            display: inline-block;
+            background: #ccae5c;
+            color: #1e1c18;
+            font-family: 'Lora', Georgia, serif;
+            font-size: 17px;
+            font-weight: bold;
+            padding: 16px 36px;
+            border-radius: 12px;
+            text-decoration: none;
+            transition: transform 0.2s, background 0.2s;
+        }
+
+        .cta-primary:hover {
+            transform: scale(1.03);
+            background: #d9be6e;
+        }
+
+        .cta-secondary {
+            display: inline-block;
+            border: 2px solid #ccae5c44;
+            color: #ccae5c;
+            font-family: 'Lora', Georgia, serif;
+            font-size: 17px;
+            padding: 14px 36px;
+            border-radius: 12px;
+            text-decoration: none;
+            transition: border-color 0.2s;
+        }
+
+        .cta-secondary:hover {
+            border-color: #ccae5c;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #ccae5c15;
+            border: 1px solid #ccae5c33;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            color: #ccae5c;
+            margin-top: 16px;
+        }
+
+        .screenshots {
+            display: flex;
+            gap: 24px;
+            justify-content: center;
+            padding: 40px 24px 80px;
+            overflow-x: auto;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .screenshots img {
+            width: 220px;
+            border-radius: 20px;
+            box-shadow: 0 12px 40px rgba(0,0,0,0.5);
+            flex-shrink: 0;
+        }
+
+        .features {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 60px 24px;
+        }
+
+        .features-border {
+            text-align: center;
+            color: #ccae5c66;
+            font-size: 14px;
+            letter-spacing: 8px;
+            margin-bottom: 48px;
+        }
+
+        .feature {
+            display: flex;
+            gap: 24px;
+            margin-bottom: 48px;
+            align-items: flex-start;
+        }
+
+        .feature-icon {
+            font-size: 36px;
+            flex-shrink: 0;
+            width: 56px;
+            height: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #ccae5c15;
+            border-radius: 14px;
+        }
+
+        .feature h3 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 20px;
+            color: #ccae5c;
+            margin-bottom: 6px;
+        }
+
+        .feature p {
+            color: #a89e8c;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+        .open-source {
+            text-align: center;
+            padding: 60px 24px;
+            border-top: 1px solid #ccae5c22;
+            border-bottom: 1px solid #ccae5c22;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .open-source h2 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 28px;
+            color: #ccae5c;
+            margin-bottom: 16px;
+        }
+
+        .open-source p {
+            color: #a89e8c;
+            font-size: 16px;
+            max-width: 540px;
+            margin: 0 auto 24px;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 48px 24px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            margin-bottom: 16px;
+        }
+
+        .footer-links a {
+            color: #ccae5c;
+            text-decoration: none;
+            margin: 0 16px;
+            font-size: 14px;
+            border-bottom: 1px solid #ccae5c44;
+        }
+
+        .footer-links a:hover {
+            border-bottom-color: #ccae5c;
+        }
+
+        .footer-copy {
+            font-size: 13px;
+            color: #6b6358;
+        }
+
+        .quote {
+            text-align: center;
+            padding: 40px 24px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .quote p {
+            font-style: italic;
+            color: #8a7e6b;
+            font-size: 18px;
+        }
+
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 38px; }
+            .hero .tagline { font-size: 19px; }
+            .screenshots img { width: 160px; }
+            .feature { flex-direction: column; gap: 12px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="hero">
+        <div class="hero-border">&#9672; &#9671; &#9672; &#9671; &#9672; &#9671; &#9672;</div>
+        <h1>Plato</h1>
+        <p class="tagline">Notes that vanish. Like Snapchat, but for your thoughts.</p>
+        <p class="sub-tagline">Write it down. Set a timer. Watch it disappear. Simple as that.</p>
+
+        <div class="cta-buttons">
+            <a href="https://github.com/wonmor/Plato-Notes-iOS" class="cta-primary">View on GitHub</a>
+            <a href="https://github.com/wonmor/Plato-Notes-iOS" class="cta-secondary">Download Source</a>
+        </div>
+        <span class="badge">Free &amp; Open Source &middot; MIT License</span>
+    </div>
+
+    <div class="screenshots">
+        <img src="https://raw.githubusercontent.com/wonmor/Plato-Notes-iOS/main/screenshots/01_empty_state.png" alt="Empty state">
+        <img src="https://raw.githubusercontent.com/wonmor/Plato-Notes-iOS/main/screenshots/02_notes_list.png" alt="Notes list">
+        <img src="https://raw.githubusercontent.com/wonmor/Plato-Notes-iOS/main/screenshots/03_composer.png" alt="Note composer">
+        <img src="https://raw.githubusercontent.com/wonmor/Plato-Notes-iOS/main/screenshots/04_detail.png" alt="Note detail">
+        <img src="https://raw.githubusercontent.com/wonmor/Plato-Notes-iOS/main/screenshots/05_burn_dialog.png" alt="Burn dialog">
+    </div>
+
+    <div class="features">
+        <div class="features-border">&#9672; &#9671; &#9672; &#9671; &#9672; &#9671; &#9672;</div>
+
+        <div class="feature">
+            <div class="feature-icon">&#128293;</div>
+            <div>
+                <h3>Disappearing Notes</h3>
+                <p>Every note has a countdown. Choose 5 minutes, 1 hour, 24 hours, 3 days, or 7 days. When the timer hits zero, it's gone forever. No recovery. No traces.</p>
+            </div>
+        </div>
+
+        <div class="feature">
+            <div class="feature-icon">&#9203;</div>
+            <div>
+                <h3>Live Countdown</h3>
+                <p>Watch the time tick down in real time. A progress bar shifts from gold to bronze to flame red as it approaches zero. You'll always know exactly how much time remains.</p>
+            </div>
+        </div>
+
+        <div class="feature">
+            <div class="feature-icon">&#128220;</div>
+            <div>
+                <h3>Burn on Demand</h3>
+                <p>Can't wait for the timer? Tap the flame icon to destroy a note instantly. Once burned, it can never be recovered.</p>
+            </div>
+        </div>
+
+        <div class="feature">
+            <div class="feature-icon">&#127963;</div>
+            <div>
+                <h3>Classical Design</h3>
+                <p>Serif typography, parchment textures, gold accents, and daily quotes from Plato. Your fleeting thoughts deserve a beautiful stage.</p>
+            </div>
+        </div>
+
+        <div class="feature">
+            <div class="feature-icon">&#128274;</div>
+            <div>
+                <h3>Completely Offline</h3>
+                <p>No accounts. No cloud. No internet required. Zero network requests. Your notes exist on your device and nowhere else.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="open-source">
+        <h2>100% Open Source</h2>
+        <p>Plato is free, open source, and licensed under MIT. No ads, no in-app purchases, no tracking. The entire codebase is on GitHub for anyone to inspect, fork, and contribute to.</p>
+        <a href="https://github.com/wonmor/Plato-Notes-iOS" class="cta-secondary">View Source Code</a>
+    </div>
+
+    <div class="quote">
+        <p>"Wise men speak because they have something to say; fools because they have to say something." — Plato</p>
+    </div>
+
+    <div class="footer">
+        <div class="footer-links">
+            <a href="./">Privacy Policy</a>
+            <a href="./support.html">Support</a>
+            <a href="https://github.com/wonmor/Plato-Notes-iOS">GitHub</a>
+        </div>
+        <p class="footer-copy">&copy; 2026 John Seong. All rights reserved.</p>
+    </div>
+
+</body>
+</html>
