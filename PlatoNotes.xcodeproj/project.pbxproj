@@ -42,7 +42,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		A71B2BEC28F5A00100D3E1D0 /* root */ = {
+		A71B2BEC28F5A00100D3E1D0 = {
 			isa = PBXGroup;
 			children = (
 				A71B2BF728F5A00100D3E1D1 /* PlatoNotes */,
@@ -149,7 +149,7 @@
 				en,
 				Base,
 			);
-			mainGroup = A71B2BEC28F5A00100D3E1D0 /* root */;
+			mainGroup = A71B2BEC28F5A00100D3E1D0;
 			productRefGroup = A71B2BF628F5A00100D3E1D5 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -316,7 +316,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"PlatoNotes/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = Z64KRUX3W3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -346,7 +346,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"PlatoNotes/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = Z64KRUX3W3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
