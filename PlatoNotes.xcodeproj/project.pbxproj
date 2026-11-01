@@ -16,6 +16,9 @@
 		A71B2C0D28F5A00100D3E1A6 /* PlatoTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71B2C0C28F5A00100D3E1A6 /* PlatoTheme.swift */; };
 		A71B2C0F28F5A00200D3E1A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A71B2C0E28F5A00200D3E1A7 /* Assets.xcassets */; };
 		A71B2C1128F5A00200D3E1A8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A71B2C1028F5A00200D3E1A8 /* Preview Assets.xcassets */; };
+		A71B2C2128F5A00300D3E1B1 /* Jost[wght].ttf in Resources */ = {isa = PBXBuildFile; fileRef = A71B2C2028F5A00300D3E1B1 /* Jost[wght].ttf */; };
+		A71B2C2328F5A00300D3E1B2 /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = A71B2C2228F5A00300D3E1B2 /* OFL.txt */; };
+		A71B2C2528F5A00300D3E1B3 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71B2C2428F5A00300D3E1B3 /* SettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +32,9 @@
 		A71B2C0C28F5A00100D3E1A6 /* PlatoTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatoTheme.swift; sourceTree = "<group>"; };
 		A71B2C0E28F5A00200D3E1A7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A71B2C1028F5A00200D3E1A8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		A71B2C2028F5A00300D3E1B1 /* Jost[wght].ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Jost[wght].ttf"; sourceTree = "<group>"; };
+		A71B2C2228F5A00300D3E1B2 /* OFL.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
+		A71B2C2428F5A00300D3E1B3 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +71,7 @@
 				A71B2BF828F5A00100D3E1D2 /* Models */,
 				A71B2BF928F5A00100D3E1D3 /* Views */,
 				A71B2BFA28F5A00100D3E1D4 /* Theme */,
+				A71B2C2628F5A00300D3E1D7 /* Fonts */,
 				A71B2C0E28F5A00200D3E1A7 /* Assets.xcassets */,
 				A71B2BFB28F5A00100D3E1D6 /* Preview Content */,
 			);
@@ -86,6 +93,7 @@
 				A71B2C0628F5A00100D3E1A3 /* NoteCardView.swift */,
 				A71B2C0828F5A00100D3E1A4 /* NoteComposerView.swift */,
 				A71B2C0A28F5A00100D3E1A5 /* NoteDetailView.swift */,
+				A71B2C2428F5A00300D3E1B3 /* SettingsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -104,6 +112,15 @@
 				A71B2C1028F5A00200D3E1A8 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		A71B2C2628F5A00300D3E1D7 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				A71B2C2028F5A00300D3E1B1 /* Jost[wght].ttf */,
+				A71B2C2228F5A00300D3E1B2 /* OFL.txt */,
+			);
+			path = Resources/Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -166,6 +183,8 @@
 			files = (
 				A71B2C1128F5A00200D3E1A8 /* Preview Assets.xcassets in Resources */,
 				A71B2C0F28F5A00200D3E1A7 /* Assets.xcassets in Resources */,
+				A71B2C2128F5A00300D3E1B1 /* Jost[wght].ttf in Resources */,
+				A71B2C2328F5A00300D3E1B2 /* OFL.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -183,6 +202,7 @@
 				A71B2C0928F5A00100D3E1A4 /* NoteComposerView.swift in Sources */,
 				A71B2C0B28F5A00100D3E1A5 /* NoteDetailView.swift in Sources */,
 				A71B2C0D28F5A00100D3E1A6 /* PlatoTheme.swift in Sources */,
+				A71B2C2528F5A00300D3E1B3 /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,11 +334,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"PlatoNotes/Preview Content\"";
 				DEVELOPMENT_TEAM = Z64KRUX3W3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -328,7 +349,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.johnseong.PlatoNotes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = YES;
@@ -344,11 +365,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"PlatoNotes/Preview Content\"";
 				DEVELOPMENT_TEAM = Z64KRUX3W3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -358,7 +380,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.johnseong.PlatoNotes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = YES;

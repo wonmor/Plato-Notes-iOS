@@ -5,68 +5,67 @@ struct NoteDetailView: View {
     @Bindable var note: Note
     @Environment(\.modelContext) private var modelContext
     @Environment(\.dismiss) private var dismiss
-    @Environment(\.colorScheme) private var colorScheme
 
     @State private var timeRemaining: String = ""
+    @State private var remaining: TimeInterval = 0
     @State private var progress: Double = 1.0
     @State private var showDeleteConfirm = false
     private let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
 
+    private var life: Color { PlatoTheme.lifeColor(progress) }
+
     var body: some View {
         ZStack {
-            PlatoTheme.background(colorScheme)
-                .ignoresSafeArea()
+            PlatoTheme.Palette.ground.ignoresSafeArea()
 
             ScrollView {
-                VStack(alignment: .leading, spacing: 20) {
-                    // Expiration banner
-                    expirationBanner
+                VStack(alignment: .leading, spacing: PlatoTheme.Space.l) {
+                    expirationBlock
 
-                    // Title
-                    TextField("Title", text: $note.title)
-                        .font(.system(size: 26, weight: .bold, design: .serif))
-                        .foregroundStyle(PlatoTheme.primaryText(colorScheme))
+                    // Note
+                    VStack(alignment: .leading, spacing: PlatoTheme.Space.s) {
+                        SectionLabel(number: 2, title: "Note")
+                        TextField("", text: $note.title, prompt: Text("Title").foregroundStyle(PlatoTheme.Palette.inkMuted))
+                            .font(PlatoTheme.Typo.title)
+                            .foregroundStyle(PlatoTheme.Palette.ink.opacity(PlatoTheme.inkFade(progress)))
+                        Rule(height: PlatoTheme.Rule.regular)
+                        TextEditor(text: $note.content)
+                            .font(PlatoTheme.Typo.bodyLarge)
+                            .foregroundStyle(PlatoTheme.Palette.ink.opacity(PlatoTheme.inkFade(progress)))
+                            .scrollContentBackground(.hidden)
+                            .frame(minHeight: 260)
+                            .accessibilityLabel("Note")
+                    }
 
-                    Divider()
-                        .overlay(PlatoTheme.gold.opacity(0.3))
-
-                    // Content
-                    TextEditor(text: $note.content)
-                        .font(.system(size: 17, design: .serif))
-                        .foregroundStyle(PlatoTheme.primaryText(colorScheme))
-                        .scrollContentBackground(.hidden)
-                        .frame(minHeight: 300)
-
-                    // Metadata
-                    VStack(alignment: .leading, spacing: 6) {
-                        Text(PlatoTheme.greekKeyBorder)
-                            .font(.caption)
-                            .foregroundStyle(PlatoTheme.gold.opacity(0.4))
-
-                        Text("Inscribed \(note.createdAt.formatted(date: .abbreviated, time: .shortened))")
-                            .font(.system(size: 12, design: .serif))
-                            .foregroundStyle(PlatoTheme.secondaryText(colorScheme))
-
-                        Text("Vanishes \(note.expiresAt.formatted(date: .abbreviated, time: .shortened))")
-                            .font(.system(size: 12, design: .serif))
-                            .foregroundStyle(PlatoTheme.terracotta.opacity(0.8))
+                    // Timeline
+                    VStack(alignment: .leading, spacing: PlatoTheme.Space.s) {
+                        SectionLabel(number: 3, title: "Timeline")
+                        Rule(height: PlatoTheme.Rule.regular)
+                        timelineRow("Written", note.createdAt, PlatoTheme.Palette.inkSecondary)
+                        timelineRow("Vanishes", note.expiresAt, PlatoTheme.Palette.ember)
                     }
                 }
-                .padding(20)
+                .padding(.horizontal, PlatoTheme.Space.m)
+                .padding(.bottom, PlatoTheme.Space.xl)
+                .frame(maxWidth: PlatoTheme.readableWidth)
+                .frame(maxWidth: .infinity)
             }
         }
+        .navigationTitle(note.expirationDuration.displayName + " note")
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 Button {
                     showDeleteConfirm = true
                 } label: {
-                    Image(systemName: "flame.circle")
-                        .foregroundStyle(PlatoTheme.terracotta)
+                    Label("Burn now", systemImage: "flame.fill")
+                        .labelStyle(.titleAndIcon)
+                        .font(PlatoTheme.Typo.button)
+                        .foregroundStyle(PlatoTheme.Palette.ember)
                 }
             }
         }
-        .alert("Burn This Scroll?", isPresented: $showDeleteConfirm) {
+        .alert("Burn this note?", isPresented: $showDeleteConfirm) {
             Button("Burn", role: .destructive) {
                 modelContext.delete(note)
                 try? modelContext.save()
@@ -74,7 +73,7 @@ struct NoteDetailView: View {
             }
             Button("Keep", role: .cancel) {}
         } message: {
-            Text("This scroll will be destroyed immediately and cannot be recovered.")
+            Text("It will be destroyed immediately and can't be recovered.")
         }
         .onAppear { updateTime() }
         .onReceive(timer) { _ in
@@ -83,58 +82,42 @@ struct NoteDetailView: View {
         }
     }
 
-    private var expirationBanner: some View {
-        HStack(spacing: 10) {
-            Image(systemName: "flame.fill")
-                .foregroundStyle(expirationColor)
-
-            VStack(alignment: .leading, spacing: 2) {
-                Text(timeRemaining)
-                    .font(.system(size: 14, weight: .semibold, design: .serif))
-                    .foregroundStyle(expirationColor)
-
-                GeometryReader { geo in
-                    ZStack(alignment: .leading) {
-                        RoundedRectangle(cornerRadius: 2)
-                            .fill(PlatoTheme.gold.opacity(0.15))
-                            .frame(height: 4)
-
-                        RoundedRectangle(cornerRadius: 2)
-                            .fill(
-                                LinearGradient(
-                                    colors: [expirationColor, expirationColor.opacity(0.7)],
-                                    startPoint: .leading,
-                                    endPoint: .trailing
-                                )
-                            )
-                            .frame(width: geo.size.width * progress, height: 4)
-                            .animation(.easeInOut(duration: 1), value: progress)
-                    }
-                }
-                .frame(height: 4)
-            }
+    /// 01: the big countdown on a field, with the drain bar under it.
+    private var expirationBlock: some View {
+        VStack(alignment: .leading, spacing: PlatoTheme.Space.s) {
+            Rule(height: PlatoTheme.Rule.heavy)
+            SectionLabel(number: 1, title: "Time left", trailing: "\(Int((progress * 100).rounded()))%")
+            Text(PlatoTheme.clock(remaining))
+                .font(PlatoTheme.Typo.clockLarge)
+                .foregroundStyle(life)
+                .monospacedDigit()
+                .contentTransition(.numericText(countsDown: true))
+                .minimumScaleFactor(0.6)
+                .lineLimit(1)
+                .accessibilityLabel(timeRemaining)
+            DrainBar(progress: progress, height: PlatoTheme.Rule.heavy + 4)
         }
-        .padding(14)
-        .background(expirationColor.opacity(0.08))
-        .clipShape(RoundedRectangle(cornerRadius: 10))
-        .overlay(
-            RoundedRectangle(cornerRadius: 10)
-                .stroke(expirationColor.opacity(0.2), lineWidth: 1)
-        )
+        .padding(.top, PlatoTheme.Space.s)
     }
 
-    private var expirationColor: Color {
-        if progress < 0.15 {
-            return PlatoTheme.terracotta
-        } else if progress < 0.4 {
-            return PlatoTheme.bronze
-        } else {
-            return PlatoTheme.gold
+    private func timelineRow(_ label: String, _ date: Date, _ color: Color) -> some View {
+        HStack {
+            Text(label.uppercased())
+                .font(PlatoTheme.Typo.section)
+                .tracking(1.2)
+                .foregroundStyle(PlatoTheme.Palette.inkMuted)
+            Spacer()
+            Text(date.formatted(date: .abbreviated, time: .shortened))
+                .font(PlatoTheme.Typo.subhead)
+                .foregroundStyle(color)
         }
+        .padding(.vertical, 6)
+        .accessibilityElement(children: .combine)
     }
 
     private func updateTime() {
         timeRemaining = note.timeRemainingFormatted
+        remaining = note.timeRemaining
         progress = note.progressRemaining
     }
 }

@@ -1,91 +1,77 @@
 import SwiftUI
 
+/// A note in the list: a flat field with a life column on the left that drains as the
+/// note burns down, and ink that fades with it.
 struct NoteCardView: View {
     let note: Note
-    @Environment(\.colorScheme) private var colorScheme
-    @State private var timeRemaining: String = ""
-    @State private var progress: Double = 1.0
-    private let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+    /// Ticks once a second from the list, so every card updates together.
+    var now: Date = .now
+
+    private var progress: Double { note.progressRemaining }
+    private var remaining: TimeInterval { max(0, note.expiresAt.timeIntervalSince(now)) }
+    private var life: Color { PlatoTheme.lifeColor(progress) }
+    private var fade: Double { PlatoTheme.inkFade(progress) }
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 10) {
-            // Header row
-            HStack {
-                Text(note.title.isEmpty ? "Untitled Scroll" : note.title)
-                    .font(.system(size: 17, weight: .semibold, design: .serif))
-                    .foregroundStyle(PlatoTheme.primaryText(colorScheme))
-                    .lineLimit(1)
+        HStack(spacing: 0) {
+            lifeColumn
 
-                Spacer()
+            VStack(alignment: .leading, spacing: PlatoTheme.Space.s) {
+                HStack(alignment: .firstTextBaseline, spacing: PlatoTheme.Space.s) {
+                    Text(note.title.isEmpty ? "Untitled" : note.title)
+                        .font(PlatoTheme.Typo.headline)
+                        .foregroundStyle(PlatoTheme.Palette.ink.opacity(fade))
+                        .lineLimit(1)
 
-                // Expiration badge
-                HStack(spacing: 4) {
-                    Image(systemName: "flame.fill")
-                        .font(.caption2)
-                    Text(note.expirationDuration.shortName)
-                        .font(.system(size: 11, weight: .medium, design: .monospaced))
+                    Spacer(minLength: PlatoTheme.Space.s)
+
+                    Text(PlatoTheme.clock(remaining))
+                        .font(PlatoTheme.Typo.clock)
+                        .foregroundStyle(life)
+                        .monospacedDigit()
+                        .contentTransition(.numericText(countsDown: true))
                 }
-                .foregroundStyle(expirationColor)
-                .padding(.horizontal, 8)
-                .padding(.vertical, 4)
-                .background(expirationColor.opacity(0.12))
-                .clipShape(Capsule())
-            }
 
-            // Content preview
-            if !note.content.isEmpty {
-                Text(note.content)
-                    .font(.system(size: 14, design: .serif))
-                    .foregroundStyle(PlatoTheme.secondaryText(colorScheme))
-                    .lineLimit(2)
-            }
-
-            // Time remaining bar
-            VStack(alignment: .leading, spacing: 4) {
-                GeometryReader { geo in
-                    ZStack(alignment: .leading) {
-                        RoundedRectangle(cornerRadius: 2)
-                            .fill(PlatoTheme.gold.opacity(0.15))
-                            .frame(height: 3)
-
-                        RoundedRectangle(cornerRadius: 2)
-                            .fill(progressGradient)
-                            .frame(width: geo.size.width * progress, height: 3)
-                            .animation(.easeInOut(duration: 1), value: progress)
-                    }
+                if !note.content.isEmpty {
+                    Text(note.content)
+                        .font(PlatoTheme.Typo.subhead)
+                        .foregroundStyle(PlatoTheme.Palette.ink.opacity(fade))
+                        .lineLimit(2)
+                        .multilineTextAlignment(.leading)
                 }
-                .frame(height: 3)
 
-                Text(timeRemaining)
-                    .font(.system(size: 11, weight: .medium, design: .serif))
-                    .foregroundStyle(expirationColor)
+                HStack(spacing: PlatoTheme.Space.s) {
+                    Label(note.expirationDuration.shortName.uppercased() + " TIMER", systemImage: "timer")
+                        .labelStyle(.titleAndIcon)
+                    Spacer()
+                    Text("GOES \(note.expiresAt.formatted(date: remaining > 86400 ? .abbreviated : .omitted, time: .shortened).uppercased())")
+                }
+                .font(PlatoTheme.Typo.section)
+                .tracking(1)
+                .foregroundStyle(PlatoTheme.Palette.inkMuted)
+                .padding(.top, 2)
             }
+            .padding(.horizontal, PlatoTheme.Space.m)
+            .padding(.vertical, 14)
         }
-        .parchmentCard()
-        .onAppear { updateTime() }
-        .onReceive(timer) { _ in updateTime() }
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(PlatoTheme.Palette.field)
+        .contentShape(Rectangle())
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel(note.title.isEmpty ? "Untitled note" : note.title)
+        .accessibilityValue(note.timeRemainingFormatted)
+        .accessibilityHint("Opens the note")
     }
 
-    private var expirationColor: Color {
-        if progress < 0.15 {
-            return PlatoTheme.terracotta
-        } else if progress < 0.4 {
-            return PlatoTheme.bronze
-        } else {
-            return PlatoTheme.gold
+    /// Vertical drain: the coloured part is the life left, measured from the bottom.
+    private var lifeColumn: some View {
+        GeometryReader { geo in
+            VStack(spacing: 0) {
+                PlatoTheme.Palette.fieldStrong
+                life.frame(height: geo.size.height * min(1, max(0, progress)))
+            }
+            .animation(.linear(duration: 1), value: progress)
         }
-    }
-
-    private var progressGradient: LinearGradient {
-        LinearGradient(
-            colors: [expirationColor, expirationColor.opacity(0.7)],
-            startPoint: .leading,
-            endPoint: .trailing
-        )
-    }
-
-    private func updateTime() {
-        timeRemaining = note.timeRemainingFormatted
-        progress = note.progressRemaining
+        .frame(width: PlatoTheme.Rule.heavy)
     }
 }

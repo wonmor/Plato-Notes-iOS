@@ -4,96 +4,105 @@ import SwiftData
 struct NoteComposerView: View {
     @Environment(\.modelContext) private var modelContext
     @Environment(\.dismiss) private var dismiss
-    @Environment(\.colorScheme) private var colorScheme
 
     @State private var title = ""
     @State private var content = ""
     @State private var selectedDuration: ExpirationDuration = .twentyFourHours
+    @FocusState private var focus: Field?
+
+    private enum Field { case title, content }
 
     var body: some View {
         NavigationStack {
             ZStack {
-                PlatoTheme.background(colorScheme)
-                    .ignoresSafeArea()
+                PlatoTheme.Palette.ground.ignoresSafeArea()
 
                 ScrollView {
-                    VStack(spacing: 20) {
-                        // Title Field
-                        VStack(alignment: .leading, spacing: 8) {
-                            Label("Title", systemImage: "textformat")
-                                .font(.system(size: 13, weight: .semibold, design: .serif))
-                                .foregroundStyle(PlatoTheme.secondaryText(colorScheme))
+                    VStack(alignment: .leading, spacing: PlatoTheme.Space.l) {
+                        Rule(height: PlatoTheme.Rule.heavy)
 
-                            TextField("Name your scroll...", text: $title)
-                                .font(.system(size: 18, weight: .medium, design: .serif))
-                                .foregroundStyle(PlatoTheme.primaryText(colorScheme))
-                                .padding(14)
-                                .background(PlatoTheme.cardBackground(colorScheme))
-                                .clipShape(RoundedRectangle(cornerRadius: 10))
-                                .overlay(
-                                    RoundedRectangle(cornerRadius: 10)
-                                        .stroke(PlatoTheme.gold.opacity(0.3), lineWidth: 1)
-                                )
+                        // Title
+                        VStack(alignment: .leading, spacing: PlatoTheme.Space.s) {
+                            SectionLabel(number: 1, title: "Title")
+                            TextField("", text: $title, prompt: Text("Name this note").foregroundStyle(PlatoTheme.Palette.inkMuted))
+                                .font(PlatoTheme.Typo.title)
+                                .foregroundStyle(PlatoTheme.Palette.ink)
+                                .focused($focus, equals: .title)
+                                .submitLabel(.next)
+                                .onSubmit { focus = .content }
+                                .padding(.vertical, PlatoTheme.Space.s)
+                            Rule(height: PlatoTheme.Rule.regular)
                         }
 
-                        // Content Field
-                        VStack(alignment: .leading, spacing: 8) {
-                            Label("Content", systemImage: "scroll")
-                                .font(.system(size: 13, weight: .semibold, design: .serif))
-                                .foregroundStyle(PlatoTheme.secondaryText(colorScheme))
-
-                            TextEditor(text: $content)
-                                .font(.system(size: 16, design: .serif))
-                                .foregroundStyle(PlatoTheme.primaryText(colorScheme))
-                                .scrollContentBackground(.hidden)
-                                .frame(minHeight: 200)
-                                .padding(14)
-                                .background(PlatoTheme.cardBackground(colorScheme))
-                                .clipShape(RoundedRectangle(cornerRadius: 10))
-                                .overlay(
-                                    RoundedRectangle(cornerRadius: 10)
-                                        .stroke(PlatoTheme.gold.opacity(0.3), lineWidth: 1)
-                                )
+                        // Content
+                        VStack(alignment: .leading, spacing: PlatoTheme.Space.s) {
+                            SectionLabel(number: 2, title: "Note")
+                            ZStack(alignment: .topLeading) {
+                                if content.isEmpty {
+                                    Text("Write it down. It won't stay.")
+                                        .font(PlatoTheme.Typo.bodyLarge)
+                                        .foregroundStyle(PlatoTheme.Palette.inkMuted)
+                                        .padding(.top, 8)
+                                        .padding(.leading, 5)
+                                        .accessibilityHidden(true)
+                                }
+                                TextEditor(text: $content)
+                                    .font(PlatoTheme.Typo.bodyLarge)
+                                    .foregroundStyle(PlatoTheme.Palette.ink)
+                                    .scrollContentBackground(.hidden)
+                                    .focused($focus, equals: .content)
+                                    .frame(minHeight: 180)
+                                    .accessibilityLabel("Note")
+                            }
+                            .padding(PlatoTheme.Space.s)
+                            .background(PlatoTheme.Palette.field)
                         }
 
-                        // Expiration Picker
-                        VStack(alignment: .leading, spacing: 12) {
-                            Label("Vanishes After", systemImage: "flame")
-                                .font(.system(size: 13, weight: .semibold, design: .serif))
-                                .foregroundStyle(PlatoTheme.secondaryText(colorScheme))
-
-                            HStack(spacing: 8) {
+                        // Expiration
+                        VStack(alignment: .leading, spacing: PlatoTheme.Space.s) {
+                            SectionLabel(number: 3, title: "Vanishes after", trailing: selectedDuration.displayName)
+                            HStack(spacing: 0) {
                                 ForEach(ExpirationDuration.allCases) { duration in
                                     durationButton(duration)
                                 }
                             }
-                        }
+                            .overlay(Rectangle().strokeBorder(PlatoTheme.Palette.ink, lineWidth: PlatoTheme.Rule.regular))
 
-                        Text(PlatoTheme.greekKeyBorder)
-                            .font(.caption)
-                            .foregroundStyle(PlatoTheme.gold.opacity(0.4))
-                            .padding(.top, 4)
+                            HStack(spacing: PlatoTheme.Space.s) {
+                                Image(systemName: "flame.fill")
+                                    .foregroundStyle(PlatoTheme.Palette.ember)
+                                    .accessibilityHidden(true)
+                                Text("Gone \(Date.now.addingTimeInterval(TimeInterval(selectedDuration.rawValue)).formatted(date: selectedDuration.rawValue >= 86400 ? .abbreviated : .omitted, time: .shortened)). It can't be recovered.")
+                                    .font(PlatoTheme.Typo.caption)
+                                    .foregroundStyle(PlatoTheme.Palette.inkSecondary)
+                            }
+                            .padding(.top, PlatoTheme.Space.xs)
+                        }
                     }
-                    .padding(20)
+                    .padding(.horizontal, PlatoTheme.Space.m)
+                    .padding(.bottom, PlatoTheme.Space.xl)
+                    .frame(maxWidth: PlatoTheme.readableWidth)
+                    .frame(maxWidth: .infinity)
                 }
             }
-            .navigationTitle("New Scroll")
+            .navigationTitle("New note")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
                     Button("Cancel") { dismiss() }
-                        .font(.system(size: 16, design: .serif))
-                        .foregroundStyle(PlatoTheme.secondaryText(colorScheme))
+                        .font(PlatoTheme.Typo.button)
+                        .foregroundStyle(PlatoTheme.Palette.inkSecondary)
                 }
 
                 ToolbarItem(placement: .topBarTrailing) {
-                    Button("Inscribe") { saveNote() }
-                        .font(.system(size: 16, weight: .semibold, design: .serif))
-                        .foregroundStyle(canSave ? PlatoTheme.gold : PlatoTheme.gold.opacity(0.4))
+                    Button("Save") { saveNote() }
+                        .font(PlatoTheme.Typo.button)
+                        .foregroundStyle(canSave ? PlatoTheme.Palette.ember : PlatoTheme.Palette.inkMuted)
                         .disabled(!canSave)
                 }
             }
         }
+        .tint(PlatoTheme.Palette.ember)
     }
 
     private var canSave: Bool {
@@ -102,36 +111,20 @@ struct NoteComposerView: View {
     }
 
     private func durationButton(_ duration: ExpirationDuration) -> some View {
-        Button {
-            withAnimation(.easeInOut(duration: 0.2)) {
+        let selected = selectedDuration == duration
+        return Button {
+            withAnimation(.easeInOut(duration: 0.15)) {
                 selectedDuration = duration
             }
         } label: {
             Text(duration.shortName)
-                .font(.system(size: 13, weight: .semibold, design: .monospaced))
-                .frame(maxWidth: .infinity)
-                .padding(.vertical, 10)
-                .background(
-                    selectedDuration == duration
-                    ? PlatoTheme.gold
-                    : PlatoTheme.cardBackground(colorScheme)
-                )
-                .foregroundStyle(
-                    selectedDuration == duration
-                    ? .white
-                    : PlatoTheme.primaryText(colorScheme)
-                )
-                .clipShape(RoundedRectangle(cornerRadius: 8))
-                .overlay(
-                    RoundedRectangle(cornerRadius: 8)
-                        .stroke(
-                            selectedDuration == duration
-                            ? Color.clear
-                            : PlatoTheme.gold.opacity(0.3),
-                            lineWidth: 1
-                        )
-                )
+                .font(PlatoTheme.Typo.clockSmall)
+                .frame(maxWidth: .infinity, minHeight: 48)
+                .background(selected ? PlatoTheme.Palette.ember : PlatoTheme.Palette.field)
+                .foregroundStyle(selected ? PlatoTheme.Palette.onEmber : PlatoTheme.Palette.ink)
         }
+        .accessibilityLabel(duration.displayName)
+        .accessibilityAddTraits(selected ? .isSelected : [])
     }
 
     private func saveNote() {
