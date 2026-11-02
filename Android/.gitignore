@@ -10,3 +10,4 @@
 /app/build
 /captures
 .kotlin
+__pycache__/
