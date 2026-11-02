@@ -4,10 +4,9 @@ import SwiftData
 @main
 struct PlatoNotesApp: App {
     let modelContainer: ModelContainer
-    @AppStorage(PlatoTheme.appearanceKey) private var appearance = PlatoTheme.Appearance.dark.rawValue
+    @AppStorage(PlatoTheme.appearanceKey) private var appearance = PlatoTheme.Appearance.light.rawValue
 
     init() {
-        PlatoTheme.install()
         do {
             let schema = Schema([Note.self])
             let config = ModelConfiguration(
@@ -28,7 +27,7 @@ struct PlatoNotesApp: App {
         WindowGroup {
             ContentView()
                 .modelContainer(modelContainer)
-                .preferredColorScheme((PlatoTheme.Appearance(rawValue: appearance) ?? .dark).colorScheme)
+                .preferredColorScheme(PlatoTheme.scheme(appearance))
         }
     }
 }

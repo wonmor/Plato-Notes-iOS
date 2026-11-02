@@ -8,6 +8,7 @@ struct ContentView: View {
     @State private var showingSettings = false
     @State private var path: [Note] = []
     @State private var now = Date.now
+    @State private var noteToBurn: Note?
     @State private var timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
 
     private var activeNotes: [Note] {
@@ -25,26 +26,39 @@ struct ContentView: View {
 
     var body: some View {
         NavigationStack(path: $path) {
-            ZStack(alignment: .bottom) {
-                PlatoTheme.Palette.ground.ignoresSafeArea()
-
-                ScrollView {
-                    VStack(alignment: .leading, spacing: 0) {
-                        header
-                        if activeNotes.isEmpty {
-                            emptyState
-                        } else {
-                            notesList
-                        }
-                    }
-                    .frame(maxWidth: PlatoTheme.readableWidth)
-                    .frame(maxWidth: .infinity)
-                    .padding(.bottom, 96)
+            Group {
+                if activeNotes.isEmpty {
+                    emptyState
+                } else {
+                    notesList
                 }
-
-                composeButton
             }
-            .toolbar(.hidden, for: .navigationBar)
+            .navigationTitle("Plato")
+            .navigationBarTitleDisplayMode(.large)
+            .toolbar {
+                ToolbarItem(placement: .topBarTrailing) {
+                    Button {
+                        showingSettings = true
+                    } label: {
+                        Label("Settings", systemImage: "gearshape")
+                    }
+                }
+                ToolbarItem(placement: .status) {
+                    Text(activeNotes.isEmpty ? "No Notes" : activeNotes.count == 1 ? "1 Note" : "\(activeNotes.count) Notes")
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                }
+                ToolbarItem(placement: .bottomBar) {
+                    Spacer()
+                }
+                ToolbarItem(placement: .bottomBar) {
+                    Button {
+                        showingComposer = true
+                    } label: {
+                        Label("New Note", systemImage: "square.and.pencil")
+                    }
+                }
+            }
             .navigationDestination(for: Note.self) { note in
                 NoteDetailView(note: note)
             }
@@ -53,6 +67,18 @@ struct ContentView: View {
             }
             .sheet(isPresented: $showingSettings) {
                 SettingsView()
+            }
+            .alert("Burn This Note?", isPresented: Binding(get: { noteToBurn != nil }, set: { if !$0 { noteToBurn = nil } })) {
+                Button("Burn", role: .destructive) {
+                    if let note = noteToBurn {
+                        modelContext.delete(note)
+                        try? modelContext.save()
+                    }
+                    noteToBurn = nil
+                }
+                Button("Keep", role: .cancel) { noteToBurn = nil }
+            } message: {
+                Text("It will be destroyed immediately and can't be recovered.")
             }
             .onReceive(timer) { date in
                 now = date
@@ -69,119 +95,70 @@ struct ContentView: View {
             }
             #endif
         }
-        .tint(PlatoTheme.Palette.ember)
-    }
-
-    // MARK: - Header
-
-    private var header: some View {
-        VStack(alignment: .leading, spacing: PlatoTheme.Space.s) {
-            HStack(alignment: .top) {
-                VStack(alignment: .leading, spacing: 2) {
-                    Text("PLATO")
-                        .font(PlatoTheme.Typo.display)
-                        .tracking(4)
-                        .foregroundStyle(PlatoTheme.Palette.ink)
-                    Text("Notes that vanish.")
-                        .font(PlatoTheme.Typo.subhead)
-                        .foregroundStyle(PlatoTheme.Palette.inkSecondary)
-                }
-                Spacer()
-                SquareIconButton(systemImage: "slider.horizontal.3", label: "Settings") {
-                    showingSettings = true
-                }
-            }
-            .padding(.top, PlatoTheme.Space.m)
-            Rule(height: PlatoTheme.Rule.heavy)
-                .padding(.top, PlatoTheme.Space.s)
-        }
-        .padding(.horizontal, PlatoTheme.Space.m)
     }
 
     // MARK: - Empty State
 
     private var emptyState: some View {
-        let quote = PlatoTheme.quoteOfTheDay()
-        return VStack(alignment: .leading, spacing: PlatoTheme.Space.m) {
-            SectionLabel(number: 1, title: "Nothing left")
-                .padding(.top, PlatoTheme.Space.l)
-
-            Image(systemName: "flame")
-                .font(.system(size: 44, weight: .regular))
-                .foregroundStyle(PlatoTheme.Palette.ember)
-                .padding(.top, PlatoTheme.Space.m)
-                .accessibilityHidden(true)
-
-            Text("Every note has vanished.")
-                .font(PlatoTheme.Typo.title)
-                .foregroundStyle(PlatoTheme.Palette.ink)
-
-            Text("Write something down, pick how long it lives, and let it go.")
-                .font(PlatoTheme.Typo.body)
-                .foregroundStyle(PlatoTheme.Palette.inkSecondary)
-                .fixedSize(horizontal: false, vertical: true)
-
-            Rule(height: PlatoTheme.Rule.regular)
-                .padding(.top, PlatoTheme.Space.l)
-
-            SectionLabel(number: 2, title: "Today's line")
-
-            VStack(alignment: .leading, spacing: PlatoTheme.Space.s) {
-                Text(quote.text)
-                    .font(PlatoTheme.Typo.bodyLarge)
-                    .foregroundStyle(PlatoTheme.Palette.ink)
-                    .fixedSize(horizontal: false, vertical: true)
-                Text("– \(quote.source)")
-                    .font(PlatoTheme.Typo.captionBold)
-                    .foregroundStyle(PlatoTheme.Palette.inkMuted)
+        ContentUnavailableView {
+            VStack(spacing: 14) {
+                BrandMark(size: 72)
+                Text("Every Note Has Vanished")
+                    .font(.title2.bold())
             }
-            .padding(.leading, PlatoTheme.Space.m)
-            .overlay(alignment: .leading) {
-                PlatoTheme.Palette.ember.frame(width: PlatoTheme.Rule.thick)
+        } description: {
+            VStack(spacing: 18) {
+                Text("Write something down, choose how long it lives, and let it go.")
+                Text("\u{201C}\(PlatoTheme.quoteOfTheDay())\u{201D}\n– Plato")
+                    .font(.footnote)
+                    .italic()
+                    .foregroundStyle(.secondary)
             }
+        } actions: {
+            Button {
+                showingComposer = true
+            } label: {
+                Label("New Note", systemImage: "square.and.pencil")
+            }
+            .buttonStyle(.borderedProminent)
         }
-        .padding(.horizontal, PlatoTheme.Space.m)
+        .background(Color(.systemGroupedBackground))
     }
 
     // MARK: - Notes List
 
     private var notesList: some View {
-        var sections: [(String, [Note])] = []
-        if !soon.isEmpty { sections.append(("Vanishing soon", soon)) }
-        if !later.isEmpty { sections.append(("Later", later)) }
-        return VStack(alignment: .leading, spacing: PlatoTheme.Space.l) {
-            ForEach(Array(sections.enumerated()), id: \.offset) { index, section in
-                VStack(alignment: .leading, spacing: PlatoTheme.Space.s) {
-                    SectionLabel(number: index + 1, title: section.0, trailing: "\(section.1.count)")
-                    Rule(height: PlatoTheme.Rule.regular)
-                    VStack(spacing: PlatoTheme.Space.s) {
-                        ForEach(section.1) { note in
-                            NavigationLink(value: note) {
-                                NoteCardView(note: note, now: now)
-                            }
-                            .buttonStyle(.plain)
-                        }
-                    }
+        List {
+            if !soon.isEmpty {
+                Section {
+                    rows(soon)
+                } header: {
+                    Label("Vanishing Soon", systemImage: "hourglass.bottomhalf.filled")
+                }
+            }
+            if !later.isEmpty {
+                Section("Later") {
+                    rows(later)
                 }
             }
         }
-        .padding(.horizontal, PlatoTheme.Space.m)
-        .padding(.top, PlatoTheme.Space.l)
+        .listStyle(.insetGrouped)
     }
 
-    private var composeButton: some View {
-        Button {
-            showingComposer = true
-        } label: {
-            Label("New note", systemImage: "square.and.pencil")
+    private func rows(_ notes: [Note]) -> some View {
+        ForEach(notes) { note in
+            NavigationLink(value: note) {
+                NoteCardView(note: note, now: now)
+            }
+            .swipeActions(edge: .trailing) {
+                Button {
+                    noteToBurn = note
+                } label: {
+                    Label("Burn", systemImage: "flame")
+                }
+                .tint(.red)
+            }
         }
-        .buttonStyle(EmberButtonStyle())
-        .frame(maxWidth: PlatoTheme.readableWidth)
-        .padding(.horizontal, PlatoTheme.Space.m)
-        .padding(.top, PlatoTheme.Space.s)
-        .padding(.bottom, PlatoTheme.Space.s)
-        .frame(maxWidth: .infinity)
-        .background(PlatoTheme.Palette.ground.ignoresSafeArea(edges: .bottom))
     }
 
     // MARK: - Expiration Logic

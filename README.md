@@ -9,7 +9,7 @@ Write it down. Set a timer. Watch it disappear. Simple as that.
 - **Disappearing notes** — every note self-destructs after a timer you choose (5 min to 7 days)
 - **Live countdown** — watch the time tick down on each note
 - **Burn on demand** — don't want to wait? Destroy a note instantly
-- **Bauhaus, dark first** — Jost type, numbered sections, thick rules and flat colour fields. Each note's life is drawn in the three primaries: cobalt while fresh, yellow as it fades, ember when it's about to go. Light and System appearances are in Settings.
+- **Native and light** — SF Pro, inset-grouped lists and system colours, with Light (default), Dark and System in Settings. Each note has a ring that drains and text that fades as its time runs out, in a warm sienna accent taken from the wax-tablet icon.
 
 ## Getting Started
 
@@ -17,7 +17,7 @@ Write it down. Set a timer. Watch it disappear. Simple as that.
 2. Build and run on iOS 17+ simulator or device
 3. Start writing notes that vanish
 
-The app icon is rendered in Blender: `blender -b -P tools/icon_render.py -- b out.png 1024`.
+The app icon, Plato's wax tablet of memory from the Theaetetus, is rendered in Blender: `blender -b -P tools/icon_render_v2.py -- a out.png 1024`.
 
 ## Tech Stack
 
