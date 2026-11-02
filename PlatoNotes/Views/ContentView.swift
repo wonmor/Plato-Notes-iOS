@@ -88,7 +88,7 @@ struct ContentView: View {
             .onAppear {
                 switch DemoData.screen {
                 case "composer": showingComposer = true
-                case "settings": showingSettings = true
+                case "settings", "tips": showingSettings = true
                 case "detail": if let first = soon.first ?? activeNotes.first { path = [first] }
                 default: break
                 }

@@ -3,6 +3,7 @@ import SwiftUI
 struct SettingsView: View {
     @Environment(\.dismiss) private var dismiss
     @AppStorage(PlatoTheme.appearanceKey) private var appearance = PlatoTheme.Appearance.light.rawValue
+    @State private var showingTipJar = false
 
     private var version: String {
         let v = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? ""
@@ -44,6 +45,24 @@ struct SettingsView: View {
                 }
 
                 Section {
+                    Button {
+                        showingTipJar = true
+                    } label: {
+                        HStack {
+                            Label("Support Plato", systemImage: "cup.and.saucer")
+                                .foregroundStyle(.primary)
+                            Spacer()
+                            Image(systemName: "chevron.right")
+                                .font(.footnote.weight(.semibold))
+                                .foregroundStyle(.tertiary)
+                        }
+                    }
+                    .accessibilityHint("Opens the tip jar")
+                } footer: {
+                    Text("Optional tips. Plato stays free.")
+                }
+
+                Section {
                     LabeledContent("Version", value: version)
                     Link(destination: URL(string: "https://github.com/wonmor/Plato-Notes-iOS")!) {
                         Label("Source Code", systemImage: "chevron.left.forwardslash.chevron.right")
@@ -51,6 +70,12 @@ struct SettingsView: View {
                 }
             }
             .navigationTitle("Settings")
+            .sheet(isPresented: $showingTipJar) {
+                TipJarView()
+            }
+            #if DEBUG
+            .onAppear { if DemoData.screen == "tips" { showingTipJar = true } }
+            #endif
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {

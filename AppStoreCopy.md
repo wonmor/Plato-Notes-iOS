@@ -30,7 +30,7 @@ COMPLETELY OFFLINE
 Plato works entirely on your device. No accounts. No cloud. No internet connection required. Your notes exist in your hands and nowhere else.
 
 FREE & OPEN SOURCE
-Plato is completely free with no ads and no in-app purchases. The entire source code is publicly available on GitHub for anyone to inspect, modify, and contribute to.
+Plato is completely free with no ads. An optional Tip Jar in Settings lets you support its development; tips unlock nothing and are not tax-deductible. The entire source code is publicly available on GitHub for anyone to inspect, modify, and contribute to.
 
 ## Keywords (100 chars max)
 disappearing,notes,temporary,self-destruct,timer,burn,ephemeral,scroll,plato,greek,offline,notepad

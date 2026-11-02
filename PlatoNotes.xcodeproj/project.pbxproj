@@ -3,260 +3,313 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 77;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A71B2C0128F5A00100D3E1A0 /* PlatoNotesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71B2C0028F5A00100D3E1A0 /* PlatoNotesApp.swift */; };
-		A71B2C0328F5A00100D3E1A1 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71B2C0228F5A00100D3E1A1 /* Note.swift */; };
-		A71B2C0528F5A00100D3E1A2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71B2C0428F5A00100D3E1A2 /* ContentView.swift */; };
-		A71B2C0728F5A00100D3E1A3 /* NoteCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71B2C0628F5A00100D3E1A3 /* NoteCardView.swift */; };
-		A71B2C0928F5A00100D3E1A4 /* NoteComposerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71B2C0828F5A00100D3E1A4 /* NoteComposerView.swift */; };
-		A71B2C0B28F5A00100D3E1A5 /* NoteDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71B2C0A28F5A00100D3E1A5 /* NoteDetailView.swift */; };
-		A71B2C0D28F5A00100D3E1A6 /* PlatoTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71B2C0C28F5A00100D3E1A6 /* PlatoTheme.swift */; };
-		A71B2C0F28F5A00200D3E1A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A71B2C0E28F5A00200D3E1A7 /* Assets.xcassets */; };
-		A71B2C1128F5A00200D3E1A8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A71B2C1028F5A00200D3E1A8 /* Preview Assets.xcassets */; };
-		A71B2C2528F5A00300D3E1B3 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71B2C2428F5A00300D3E1B3 /* SettingsView.swift */; };
+		10F24BCA671F713A944071D3 /* TipJarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B08BEBF628124F3C368DAB9 /* TipJarTests.swift */; };
+		13FFEB6BA61493714C9BC952 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 794D32D5DB46C2578BB1CCD6 /* ContentView.swift */; };
+		14C246908E27896D9BCD32B3 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914D752DEB6BEADCB6C2ECAF /* SettingsView.swift */; };
+		16A4D5980502730418BAEED2 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A384E08CFA1BFE5DB66388F6 /* Preview Assets.xcassets */; };
+		2975054F1E05672AF7335853 /* TipJar.storekit in Resources */ = {isa = PBXBuildFile; fileRef = ED39C008CF5566A26999D85C /* TipJar.storekit */; };
+		37E623CE76A8DC46FBA072D7 /* TipJarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89442C6C7906C8DC0B51D8D /* TipJarView.swift */; };
+		46587B736075AA487503EF0F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BF47CFB962DEAD48A647B4E /* Assets.xcassets */; };
+		541DFFC9D04F660F8A2DC1DD /* NoteDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F0061D0639FB2A3E7799BB /* NoteDetailView.swift */; };
+		6BEE1E19CD08A853AC96F298 /* PlatoTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0FAB3965690FF29D00DAD82 /* PlatoTheme.swift */; };
+		7DF852CD02FFAC86E31060FC /* PlatoNotesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AF64F10D9C0B075C31ADC17 /* PlatoNotesApp.swift */; };
+		89F767415D8F035B3E17F2D3 /* NoteCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9EFA5C6B589C711C94F8B35 /* NoteCardView.swift */; };
+		BA1EEE892FC8563DD7735CF5 /* TipJar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 107147526563DB67C0D92D09 /* TipJar.swift */; };
+		D9A87091ECC8FDAAEADFAE2D /* NoteComposerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EFB12C9F97A8CADC02CE34 /* NoteComposerView.swift */; };
+		F70F233A25FF94F3CA7EB1A5 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82EA33E41655C895B2F744CB /* Note.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		09046B3476FDA607AB301F5C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AB1430E655E682DFB375DC58 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A99637C6A087C71FE9B0AFEA;
+			remoteInfo = PlatoNotes;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
-		A71B2BF528F5A00100D3E1B0 /* PlatoNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlatoNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		A71B2C0028F5A00100D3E1A0 /* PlatoNotesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatoNotesApp.swift; sourceTree = "<group>"; };
-		A71B2C0228F5A00100D3E1A1 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
-		A71B2C0428F5A00100D3E1A2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		A71B2C0628F5A00100D3E1A3 /* NoteCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCardView.swift; sourceTree = "<group>"; };
-		A71B2C0828F5A00100D3E1A4 /* NoteComposerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteComposerView.swift; sourceTree = "<group>"; };
-		A71B2C0A28F5A00100D3E1A5 /* NoteDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDetailView.swift; sourceTree = "<group>"; };
-		A71B2C0C28F5A00100D3E1A6 /* PlatoTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatoTheme.swift; sourceTree = "<group>"; };
-		A71B2C0E28F5A00200D3E1A7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		A71B2C1028F5A00200D3E1A8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		A71B2C2428F5A00300D3E1B3 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		0AF64F10D9C0B075C31ADC17 /* PlatoNotesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatoNotesApp.swift; sourceTree = "<group>"; };
+		1031B0B841FFED3887DEBF22 /* PlatoNotes.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = PlatoNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		107147526563DB67C0D92D09 /* TipJar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipJar.swift; sourceTree = "<group>"; };
+		5BF47CFB962DEAD48A647B4E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		794D32D5DB46C2578BB1CCD6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		82EA33E41655C895B2F744CB /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
+		8B08BEBF628124F3C368DAB9 /* TipJarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipJarTests.swift; sourceTree = "<group>"; };
+		914D752DEB6BEADCB6C2ECAF /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		A384E08CFA1BFE5DB66388F6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		B89442C6C7906C8DC0B51D8D /* TipJarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipJarView.swift; sourceTree = "<group>"; };
+		B9EFA5C6B589C711C94F8B35 /* NoteCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCardView.swift; sourceTree = "<group>"; };
+		D3EFB12C9F97A8CADC02CE34 /* NoteComposerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteComposerView.swift; sourceTree = "<group>"; };
+		D3F0061D0639FB2A3E7799BB /* NoteDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDetailView.swift; sourceTree = "<group>"; };
+		E0FAB3965690FF29D00DAD82 /* PlatoTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatoTheme.swift; sourceTree = "<group>"; };
+		E8AD9BDF754CDFB82FD450DE /* PlatoNotesTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = PlatoNotesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED39C008CF5566A26999D85C /* TipJar.storekit */ = {isa = PBXFileReference; path = TipJar.storekit; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
-/* Begin PBXFrameworksBuildPhase section */
-		A71B2BF228F5A00100D3E1C0 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXFrameworksBuildPhase section */
-
 /* Begin PBXGroup section */
-		A71B2BEC28F5A00100D3E1D0 = {
+		042440752737424BDEDAE6AE /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				A71B2BF728F5A00100D3E1D1 /* PlatoNotes */,
-				A71B2BF628F5A00100D3E1D5 /* Products */,
-			);
-			sourceTree = "<group>";
-		};
-		A71B2BF628F5A00100D3E1D5 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				A71B2BF528F5A00100D3E1B0 /* PlatoNotes.app */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		A71B2BF728F5A00100D3E1D1 /* PlatoNotes */ = {
-			isa = PBXGroup;
-			children = (
-				A71B2C0028F5A00100D3E1A0 /* PlatoNotesApp.swift */,
-				A71B2BF828F5A00100D3E1D2 /* Models */,
-				A71B2BF928F5A00100D3E1D3 /* Views */,
-				A71B2BFA28F5A00100D3E1D4 /* Theme */,
-				A71B2C0E28F5A00200D3E1A7 /* Assets.xcassets */,
-				A71B2BFB28F5A00100D3E1D6 /* Preview Content */,
-			);
-			path = PlatoNotes;
-			sourceTree = "<group>";
-		};
-		A71B2BF828F5A00100D3E1D2 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				A71B2C0228F5A00100D3E1A1 /* Note.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		A71B2BF928F5A00100D3E1D3 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				A71B2C0428F5A00100D3E1A2 /* ContentView.swift */,
-				A71B2C0628F5A00100D3E1A3 /* NoteCardView.swift */,
-				A71B2C0828F5A00100D3E1A4 /* NoteComposerView.swift */,
-				A71B2C0A28F5A00100D3E1A5 /* NoteDetailView.swift */,
-				A71B2C2428F5A00300D3E1B3 /* SettingsView.swift */,
+				794D32D5DB46C2578BB1CCD6 /* ContentView.swift */,
+				B9EFA5C6B589C711C94F8B35 /* NoteCardView.swift */,
+				D3EFB12C9F97A8CADC02CE34 /* NoteComposerView.swift */,
+				D3F0061D0639FB2A3E7799BB /* NoteDetailView.swift */,
+				914D752DEB6BEADCB6C2ECAF /* SettingsView.swift */,
+				B89442C6C7906C8DC0B51D8D /* TipJarView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
 		};
-		A71B2BFA28F5A00100D3E1D4 /* Theme */ = {
+		27C1F6BB4D1C4193AF2247F8 /* StoreKit */ = {
 			isa = PBXGroup;
 			children = (
-				A71B2C0C28F5A00100D3E1A6 /* PlatoTheme.swift */,
+				ED39C008CF5566A26999D85C /* TipJar.storekit */,
+			);
+			path = StoreKit;
+			sourceTree = "<group>";
+		};
+		2F7CAD1B94D9E53C96B750E5 /* PlatoNotesTests */ = {
+			isa = PBXGroup;
+			children = (
+				8B08BEBF628124F3C368DAB9 /* TipJarTests.swift */,
+			);
+			path = PlatoNotesTests;
+			sourceTree = "<group>";
+		};
+		3AC102577793BAE5ED60A1B0 /* PlatoNotes */ = {
+			isa = PBXGroup;
+			children = (
+				5BF47CFB962DEAD48A647B4E /* Assets.xcassets */,
+				0AF64F10D9C0B075C31ADC17 /* PlatoNotesApp.swift */,
+				7EEB5163C634B154103CC989 /* Models */,
+				868B29000A408BAC7B29C589 /* Preview Content */,
+				C4647AB8255F0739CD27F2F8 /* Theme */,
+				042440752737424BDEDAE6AE /* Views */,
+			);
+			path = PlatoNotes;
+			sourceTree = "<group>";
+		};
+		7EEB5163C634B154103CC989 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				82EA33E41655C895B2F744CB /* Note.swift */,
+				107147526563DB67C0D92D09 /* TipJar.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		852326D215C58F3B6BB5BE85 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1031B0B841FFED3887DEBF22 /* PlatoNotes.app */,
+				E8AD9BDF754CDFB82FD450DE /* PlatoNotesTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		868B29000A408BAC7B29C589 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				A384E08CFA1BFE5DB66388F6 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		C4647AB8255F0739CD27F2F8 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				E0FAB3965690FF29D00DAD82 /* PlatoTheme.swift */,
 			);
 			path = Theme;
 			sourceTree = "<group>";
 		};
-		A71B2BFB28F5A00100D3E1D6 /* Preview Content */ = {
+		EBBFB903331E726852BA5162 = {
 			isa = PBXGroup;
 			children = (
-				A71B2C1028F5A00200D3E1A8 /* Preview Assets.xcassets */,
+				3AC102577793BAE5ED60A1B0 /* PlatoNotes */,
+				2F7CAD1B94D9E53C96B750E5 /* PlatoNotesTests */,
+				27C1F6BB4D1C4193AF2247F8 /* StoreKit */,
+				852326D215C58F3B6BB5BE85 /* Products */,
 			);
-			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A71B2BF428F5A00100D3E1E0 /* PlatoNotes */ = {
+		A99637C6A087C71FE9B0AFEA /* PlatoNotes */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A71B2C1928F5A00200D3E1F2 /* Build configuration list for PBXNativeTarget "PlatoNotes" */;
+			buildConfigurationList = A8DBA06D6165E0D4E065AFC2 /* Build configuration list for PBXNativeTarget "PlatoNotes" */;
 			buildPhases = (
-				A71B2BF128F5A00100D3E1E1 /* Sources */,
-				A71B2BF228F5A00100D3E1C0 /* Frameworks */,
-				A71B2BF328F5A00100D3E1E2 /* Resources */,
+				54EE3F48C7D44B6BB297E019 /* Sources */,
+				CB77B009BC503017E9895F91 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = PlatoNotes;
+			packageProductDependencies = (
+			);
 			productName = PlatoNotes;
-			productReference = A71B2BF528F5A00100D3E1B0 /* PlatoNotes.app */;
+			productReference = 1031B0B841FFED3887DEBF22 /* PlatoNotes.app */;
 			productType = "com.apple.product-type.application";
+		};
+		C8C408A962D2BC1F17A1432C /* PlatoNotesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C7AA98B421ED000B9E87F892 /* Build configuration list for PBXNativeTarget "PlatoNotesTests" */;
+			buildPhases = (
+				51F3442C56C31656208F3209 /* Sources */,
+				4DE07A38BE820529F78B647E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				05054887D875C9B5EBFA2714 /* PBXTargetDependency */,
+			);
+			name = PlatoNotesTests;
+			packageProductDependencies = (
+			);
+			productName = PlatoNotesTests;
+			productReference = E8AD9BDF754CDFB82FD450DE /* PlatoNotesTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		A71B2BED28F5A00100D3E1F0 /* Project object */ = {
+		AB1430E655E682DFB375DC58 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1500;
-				LastUpgradeCheck = 1500;
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
 				TargetAttributes = {
-					A71B2BF428F5A00100D3E1E0 = {
-						CreatedOnToolsVersion = 15.0;
+					A99637C6A087C71FE9B0AFEA = {
+						DevelopmentTeam = Z64KRUX3W3;
+						ProvisioningStyle = Automatic;
+					};
+					C8C408A962D2BC1F17A1432C = {
+						DevelopmentTeam = Z64KRUX3W3;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
-			buildConfigurationList = A71B2BF028F5A00100D3E1F1 /* Build configuration list for PBXProject "PlatoNotes" */;
-			compatibilityVersion = "Xcode 14.0";
+			buildConfigurationList = 0C0F80930294E10F06C08F7B /* Build configuration list for PBXProject "PlatoNotes" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
 				Base,
+				en,
 			);
-			mainGroup = A71B2BEC28F5A00100D3E1D0;
-			productRefGroup = A71B2BF628F5A00100D3E1D5 /* Products */;
+			mainGroup = EBBFB903331E726852BA5162;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 852326D215C58F3B6BB5BE85 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A71B2BF428F5A00100D3E1E0 /* PlatoNotes */,
+				A99637C6A087C71FE9B0AFEA /* PlatoNotes */,
+				C8C408A962D2BC1F17A1432C /* PlatoNotesTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		A71B2BF328F5A00100D3E1E2 /* Resources */ = {
+		4DE07A38BE820529F78B647E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A71B2C1128F5A00200D3E1A8 /* Preview Assets.xcassets in Resources */,
-				A71B2C0F28F5A00200D3E1A7 /* Assets.xcassets in Resources */,
+				2975054F1E05672AF7335853 /* TipJar.storekit in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CB77B009BC503017E9895F91 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				46587B736075AA487503EF0F /* Assets.xcassets in Resources */,
+				16A4D5980502730418BAEED2 /* Preview Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		A71B2BF128F5A00100D3E1E1 /* Sources */ = {
+		51F3442C56C31656208F3209 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A71B2C0128F5A00100D3E1A0 /* PlatoNotesApp.swift in Sources */,
-				A71B2C0328F5A00100D3E1A1 /* Note.swift in Sources */,
-				A71B2C0528F5A00100D3E1A2 /* ContentView.swift in Sources */,
-				A71B2C0728F5A00100D3E1A3 /* NoteCardView.swift in Sources */,
-				A71B2C0928F5A00100D3E1A4 /* NoteComposerView.swift in Sources */,
-				A71B2C0B28F5A00100D3E1A5 /* NoteDetailView.swift in Sources */,
-				A71B2C0D28F5A00100D3E1A6 /* PlatoTheme.swift in Sources */,
-				A71B2C2528F5A00300D3E1B3 /* SettingsView.swift in Sources */,
+				10F24BCA671F713A944071D3 /* TipJarTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		54EE3F48C7D44B6BB297E019 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				13FFEB6BA61493714C9BC952 /* ContentView.swift in Sources */,
+				F70F233A25FF94F3CA7EB1A5 /* Note.swift in Sources */,
+				89F767415D8F035B3E17F2D3 /* NoteCardView.swift in Sources */,
+				D9A87091ECC8FDAAEADFAE2D /* NoteComposerView.swift in Sources */,
+				541DFFC9D04F660F8A2DC1DD /* NoteDetailView.swift in Sources */,
+				7DF852CD02FFAC86E31060FC /* PlatoNotesApp.swift in Sources */,
+				6BEE1E19CD08A853AC96F298 /* PlatoTheme.swift in Sources */,
+				14C246908E27896D9BCD32B3 /* SettingsView.swift in Sources */,
+				BA1EEE892FC8563DD7735CF5 /* TipJar.swift in Sources */,
+				37E623CE76A8DC46FBA072D7 /* TipJarView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		05054887D875C9B5EBFA2714 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A99637C6A087C71FE9B0AFEA /* PlatoNotes */;
+			targetProxy = 09046B3476FDA607AB301F5C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
-		A71B2C1528F5A00200D3E2A0 /* Debug */ = {
+		7622A1E7EBC8A186408D5718 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu17;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
 				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
-				MTL_FAST_MATH = YES;
-				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.johnseong.PlatoNotesTests;
 				SDKROOT = iphoneos;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PlatoNotes.app/PlatoNotes";
 			};
 			name = Debug;
 		};
-		A71B2C1628F5A00200D3E2A1 /* Release */ = {
+		827E85EA2B901C244CFBE802 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.johnseong.PlatoNotesTests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PlatoNotes.app/PlatoNotes";
+			};
+			name = Release;
+		};
+		87C3A51BADD7A233E60FC793 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -264,6 +317,7 @@
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -289,8 +343,12 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 4;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = Z64KRUX3W3;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = YES;
@@ -304,23 +362,26 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		A71B2C1728F5A00200D3E2A2 /* Debug */ = {
+		D8254CCE1B6095F2FFDFD00D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_ASSET_PATHS = "\"PlatoNotes/Preview Content\"";
-				DEVELOPMENT_TEAM = Z64KRUX3W3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
@@ -333,69 +394,146 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.johnseong.PlatoNotes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
 				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E28539469AF0B1770D27B7AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_ASSET_PATHS = "\"PlatoNotes/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.johnseong.PlatoNotes;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		EFDBD444A47D6A13A2109C62 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 4;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = Z64KRUX3W3;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		A71B2C1828F5A00200D3E2A3 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
-				DEVELOPMENT_ASSET_PATHS = "\"PlatoNotes/Preview Content\"";
-				DEVELOPMENT_TEAM = Z64KRUX3W3;
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.1;
-				PRODUCT_BUNDLE_IDENTIFIER = com.johnseong.PlatoNotes;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A71B2BF028F5A00100D3E1F1 /* Build configuration list for PBXProject "PlatoNotes" */ = {
+		0C0F80930294E10F06C08F7B /* Build configuration list for PBXProject "PlatoNotes" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A71B2C1528F5A00200D3E2A0 /* Debug */,
-				A71B2C1628F5A00200D3E2A1 /* Release */,
+				EFDBD444A47D6A13A2109C62 /* Debug */,
+				87C3A51BADD7A233E60FC793 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
-		A71B2C1928F5A00200D3E1F2 /* Build configuration list for PBXNativeTarget "PlatoNotes" */ = {
+		A8DBA06D6165E0D4E065AFC2 /* Build configuration list for PBXNativeTarget "PlatoNotes" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				A71B2C1728F5A00200D3E2A2 /* Debug */,
-				A71B2C1828F5A00200D3E2A3 /* Release */,
+				D8254CCE1B6095F2FFDFD00D /* Debug */,
+				E28539469AF0B1770D27B7AA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
+		};
+		C7AA98B421ED000B9E87F892 /* Build configuration list for PBXNativeTarget "PlatoNotesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7622A1E7EBC8A186408D5718 /* Debug */,
+				827E85EA2B901C244CFBE802 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = A71B2BED28F5A00100D3E1F0 /* Project object */;
+	rootObject = AB1430E655E682DFB375DC58 /* Project object */;
 }

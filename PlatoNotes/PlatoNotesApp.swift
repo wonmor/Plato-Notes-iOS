@@ -5,6 +5,7 @@ import SwiftData
 struct PlatoNotesApp: App {
     let modelContainer: ModelContainer
     @AppStorage(PlatoTheme.appearanceKey) private var appearance = PlatoTheme.Appearance.light.rawValue
+    @State private var tipJar = TipJarStore()
 
     init() {
         do {
@@ -27,7 +28,9 @@ struct PlatoNotesApp: App {
         WindowGroup {
             ContentView()
                 .modelContainer(modelContainer)
+                .environment(tipJar)
                 .preferredColorScheme(PlatoTheme.scheme(appearance))
+                .task { tipJar.start() }
         }
     }
 }

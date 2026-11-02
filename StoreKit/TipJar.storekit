@@ -1,0 +1,89 @@
+{
+  "appPolicies": {
+    "eula": "",
+    "policies": [
+      {
+        "locale": "en_US",
+        "policyText": "",
+        "policyURL": ""
+      }
+    ]
+  },
+  "identifier": "5D1A7E30",
+  "nonRenewingSubscriptions": [],
+  "products": [
+    {
+      "displayPrice": "0.99",
+      "familyShareable": false,
+      "internalID": "1A2B3C401",
+      "localizations": [
+        {
+          "description": "A small thank-you. Unlocks nothing.",
+          "displayName": "Small tip",
+          "locale": "en_US"
+        }
+      ],
+      "productID": "plato.tip.1",
+      "referenceName": "Small tip (plato.tip.1)",
+      "type": "Consumable"
+    },
+    {
+      "displayPrice": "4.99",
+      "familyShareable": false,
+      "internalID": "1A2B3C405",
+      "localizations": [
+        {
+          "description": "A kind thank-you. Unlocks nothing.",
+          "displayName": "Kind tip",
+          "locale": "en_US"
+        }
+      ],
+      "productID": "plato.tip.5",
+      "referenceName": "Kind tip (plato.tip.5)",
+      "type": "Consumable"
+    },
+    {
+      "displayPrice": "19.99",
+      "familyShareable": false,
+      "internalID": "1A2B3C420",
+      "localizations": [
+        {
+          "description": "A generous thank-you. Unlocks nothing.",
+          "displayName": "Generous tip",
+          "locale": "en_US"
+        }
+      ],
+      "productID": "plato.tip.20",
+      "referenceName": "Generous tip (plato.tip.20)",
+      "type": "Consumable"
+    },
+    {
+      "displayPrice": "49.99",
+      "familyShareable": false,
+      "internalID": "1A2B3C450",
+      "localizations": [
+        {
+          "description": "A big thank-you. Unlocks nothing.",
+          "displayName": "Big tip",
+          "locale": "en_US"
+        }
+      ],
+      "productID": "plato.tip.50",
+      "referenceName": "Big tip (plato.tip.50)",
+      "type": "Consumable"
+    }
+  ],
+  "settings": {
+    "_applicationInternalID": "6761697919",
+    "_developerTeamID": "Z64KRUX3W3",
+    "_failTransactionsEnabled": false,
+    "_locale": "en_US",
+    "_storefront": "USA",
+    "_storeKitErrors": []
+  },
+  "subscriptionGroups": [],
+  "version": {
+    "major": 4,
+    "minor": 0
+  }
+}
