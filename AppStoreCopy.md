@@ -12,28 +12,28 @@ Write it down. Set a timer. Watch it disappear. Plato is the beautiful, ancient 
 ## Description
 Some thoughts aren't meant to last forever.
 
-Plato is a beautifully crafted notes app inspired by ancient Greek aesthetics. Write your thoughts on digital scrolls, set a timer, and watch them vanish — like words dissolving into the aether.
+Plato is a calm, simple notes app where every note has a timer. Write something down, choose how long it should live, and let it go. When the time runs out, the note is gone for good.
 
 DISAPPEARING NOTES
-Every note you create has an expiration timer. Choose from 5 minutes, 1 hour, 24 hours, 3 days, or 7 days. When the timer hits zero, the note is gone forever.
+Every note gets a timer: 5 minutes, 1 hour, 24 hours, 3 days or 7 days. When it reaches zero, the note is deleted forever.
 
-LIVE COUNTDOWN
-Watch the time tick down in real time. A progress bar on each note shifts from gold to bronze to flame red as it nears its end. You'll always know how much time remains.
+A RING THAT DRAINS
+Each note shows a countdown ring that empties as its time runs out, shifting from warm sienna to orange to red near the end. The text fades a little as the note gets older, so you always know what's about to vanish.
 
-BURN ON DEMAND
-Can't wait for the timer? Tap the flame icon to destroy a note instantly. Once burned, it can never be recovered.
+SWIPE TO BURN
+Done with a note early? Swipe it to burn it, or burn it from the note itself. Once it's gone, it can't be recovered.
 
-CLASSICAL DESIGN
-Every detail is crafted with care — serif typography, parchment textures, gold accents, and daily quotes from Plato himself. Your fleeting thoughts deserve a beautiful stage.
+LIGHT, NATIVE DESIGN
+Plato looks and feels like it belongs on your iPhone and iPad: clean lists, system fonts and SF Symbols, with a single warm accent taken from the icon – Plato's wax tablet of memory. Choose Light, Dark or System in Settings.
 
-COMPLETELY OFFLINE
-Plato works entirely on your device. No accounts. No cloud. No internet connection required. Your notes exist in your hands and nowhere else.
+YOUR NOTES STAY ON YOUR DEVICE
+No account, no cloud, no sync and no tracking. Plato works offline, and your notes never leave your device.
 
-FREE & OPEN SOURCE
-Plato is completely free with no ads. An optional Tip Jar in Settings lets you support its development; tips unlock nothing and are not tax-deductible. The entire source code is publicly available on GitHub for anyone to inspect, modify, and contribute to.
+FREE, WITH AN OPTIONAL TIP JAR
+Plato is free with no ads. If it's useful to you, an optional Tip Jar in Settings lets you support its development – tips unlock nothing and are not tax-deductible. The source code is on GitHub for anyone to inspect.
 
 ## Keywords (100 chars max)
-disappearing,notes,temporary,self-destruct,timer,burn,ephemeral,scroll,plato,greek,offline,notepad
+disappearing,notes,temporary,self-destruct,timer,burn,ephemeral,private,offline,notepad,memo,plato
 
 ## Categories
 Primary: Productivity
