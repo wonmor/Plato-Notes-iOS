@@ -83,7 +83,7 @@ def listing():
     eid = edit()
     for t in (NOTES, text("short-description.txt"), text("full-description.txt")):
         assert "·" not in t and "•" not in t
-    print("details", call(API + f"/edits/{eid}/details", "PATCH", {"defaultLanguage": LANG, "contactEmail": "wonmor@yahoo.com"}))
+    print("details", call(API + f"/edits/{eid}/details", "PATCH", {"defaultLanguage": LANG, "contactEmail": "john@orchestrsim.com"}))
     print("listing", call(API + f"/edits/{eid}/listings/{LANG}", "PUT", {
         "language": LANG, "title": text("title.txt"),
         "shortDescription": text("short-description.txt"), "fullDescription": text("full-description.txt")}).get("title"))
