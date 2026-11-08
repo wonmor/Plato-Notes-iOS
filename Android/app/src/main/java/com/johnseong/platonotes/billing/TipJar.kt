@@ -65,6 +65,8 @@ data class TipJarUi(
     val load: TipLoad = TipLoad.Loading,
     val options: List<TipOption> = emptyList(),
     val status: TipStatus = TipStatus.Idle,
+    /** Why the tips could not be loaded (Play code / timeout), shown under Unavailable. */
+    val detail: String? = null,
 ) {
     companion object {
         /** Staging for screenshots: the US prices set on Play Console. */

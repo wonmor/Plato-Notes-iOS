@@ -185,7 +185,7 @@ fun TipJarContent(ui: TipJarUi, onTip: (TipOption) -> Unit, onRetry: () -> Unit,
                     style = MaterialTheme.typography.bodyLarge, color = MaterialTheme.colorScheme.onSurfaceVariant)
                 when (ui.load) {
                     TipLoad.Loading -> CircularProgressIndicator(Modifier.padding(32.dp))
-                    TipLoad.Unavailable -> Message(null, TipJar.UNAVAILABLE, "Try again", onRetry)
+                    TipLoad.Unavailable -> Message(null, ui.detail?.let { "${TipJar.UNAVAILABLE}\n$it" } ?: TipJar.UNAVAILABLE, "Try again", onRetry)
                     TipLoad.Ready -> Box(Modifier.widthIn(max = 560.dp)) {
                         Group(items = ui.options.map { o -> {
                             val busy = (s as? TipStatus.Purchasing)?.id == o.id
